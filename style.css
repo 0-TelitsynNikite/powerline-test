@@ -1,0 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+}
+
+body {
+    background: #333;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    padding-top: 20px;
+}
+
+.edit {
+    position: absolute;
+    right: 5%;
+    top: 3%;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    padding: 7px 15px;
+    border-radius: 15px;
+    background: rgb(7, 126, 206);
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.user-wrapper span {
+    margin-left: 5px;
+    color: rgb(37, 132, 170);
+}
+
+.modal {
+    display: none;
+    background: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.modal.active {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    animation-duration: 0.5s;
+    animation-name: opacity;
+}
+
+.modal__content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    width: 30em;
+    background: #444;
+    border-radius: 5px;
+    padding: 20px 20px;
+    animation-duration: 0.5s;
+    animation-name: show;
+}
+
+.title__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal__form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.modal__form .modal__form--input {
+    padding: 7px;
+    border: none;
+    border-radius: 5px;
+    background: #333;
+}
+
+.modal__sender {
+    background: rgb(37, 132, 170);
+    border: none;
+    border-radius: 5px;
+    padding: 7px 5px;
+    width: 7em;
+    margin: 0 auto;
+    cursor: pointer;
+}
+
+.modal__sender:hover {
+    box-shadow: 0 0 10px rgb(97, 168, 196);
+}
+
+.modal__closer {
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.modal__closer:hover {
+    font-size: 25px;
+    color: black;
+    transition: font-size .2s;
+}
+
+@keyframes show {
+    from {
+        transform: translateX(500px)
+    }
+
+    to {
+        transform: translateX(0)
+    }
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
