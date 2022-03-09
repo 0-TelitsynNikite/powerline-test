@@ -32,7 +32,6 @@ function showElem(elem) {
 }
 
 function setUserData(elem, data) {
-    console.log(data);
     elem.textContent = data
 }
 

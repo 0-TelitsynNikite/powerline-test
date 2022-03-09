@@ -21,16 +21,24 @@ body {
     padding-top: 20px;
 }
 
+.title {
+    color: rgb(97, 168, 196);
+    text-transform: uppercase;
+}
+
 .edit {
     position: absolute;
     right: 5%;
     top: 3%;
-    border: 1px solid rgba(0, 0, 0, 0.5);
     padding: 7px 15px;
     border-radius: 15px;
-    background: rgb(7, 126, 206);
+    background: rgb(97, 168, 196);
     font-weight: 700;
     cursor: pointer;
+}
+
+.edit:hover {
+    box-shadow: 0 0 10px rgb(97, 168, 196);
 }
 
 .user-wrapper span {
