@@ -15,6 +15,14 @@ async function getUser(url) {
     return res.json()
 }
 
+window.addEventListener('load', () => {
+    getUser('http://109.236.74.74:9900/getdata').then(data => {
+        setUserData(userName, data.Garage.Name)
+        setUserData(userOwner, data.Garage.Owner)
+        setUserData(userEmail, data.Garage.Email)
+    })
+})
+
 function closeElem(elem) {
     return elem.classList.remove('active')
 }
@@ -24,6 +32,7 @@ function showElem(elem) {
 }
 
 function setUserData(elem, data) {
+    console.log(data);
     elem.textContent = data
 }
 
@@ -37,21 +46,9 @@ function changeUserData() {
         setUserData(userOwner, owner)
         setUserData(userEmail, email)
 
-        nameInput.value = ''
-        ownerInput.value = ''
-        emailInput.value = ''
-
         closeElem(modal)
     }
 }
-
-window.addEventListener('load', () => {
-    getUser('http://109.236.74.74:9900/getdata').then(data => {
-        setUserData(userName, data.Garage.Name)
-        setUserData(userOwner, data.Garage.Owner)
-        setUserData(userEmail, data.Garage.Email)
-    })
-})
 
 editBtn.addEventListener('click', (e) => {
     const target = e.target
